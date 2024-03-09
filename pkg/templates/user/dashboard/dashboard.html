@@ -1,0 +1,129 @@
+{% extends "user/base.html" %}
+
+{% block content %}
+
+
+    <br><br><br><br>
+    <div class="d-flex main bg-light">
+        <div class="sidebar pt-5">
+                <h2 class="d-flex justify-content-center" >MY DASHBOARD</h2>
+                <ul class="list-group" id="listgroup">
+                    <li class="list-group-item" id="sidebars">Profile</li>
+                    <li class="list-group-item"><a href="/mymarket/">My markets</a></li>
+                    <li class="list-group-item"><a href="/upload/">Upload Property</a></li>
+                    <li class="list-group-item"><a href="/performance/">performances</a></li>
+                    <li class="list-group-item"><a href="/myadverts">My Adverts</a></li>
+                    <li class="list-group-item"><a href="/mymessage/">Massages</a></li>
+                    <li class="list-group-item"><a href="/orders">Orders</a></li>
+                    <li class="list-group-item"><a href="/settings/">Settings</a></li>
+                    <li class="list-group-item"><a href="/logout/">Log Out</a></li>
+           </ul>
+        </div>
+        
+            
+           <div class="mx-auto pt-5 bg-light container">
+                <div class=" row justify-content-end">
+                    <div class="col-lg-8">
+                        <h1 class="text-center pt-5" id="greeting"> {{ user.user_fname }}!</h1>
+                        <h4 class="text-center">REF No: <strong>{{user.user_ref}}</strong></h4>
+                        <button class="btn butto"><a href="/edit/profile/" class="text-white">Edit Profile</a></button>
+                    </div>
+                    <div class="col-md-4">
+                        {% if not user.user_pics %}
+                        <img src="/static/profile.jpeg" alt="..." style="max-height: 200px; max-width: 200px;" class="rounded-circle">
+                        {% else %}
+                        <img src="/static/profile/{{ user.user_pics }}" alt="..." style="max-height: 200px; max-width: 200px;" class="rounded-circle">
+                        {% endif %}
+                    
+                            <p class="ml-5"><a href="/changedp/" id="edit"><i class="fa fa-camera" style="font-size: 25px; position: relative; bottom: 25px; left: 80px;"></i></a></p>
+                            
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>{{ user.user_fname }} {{ user.user_lname }} {{ user.user_othername }}</th>
+                                   
+                                </tr>
+                                <tr>
+                                    <th>Email</th>
+                                    <th>{{user.user_email}}</th>
+                                </tr>
+                                <tr>
+                                    <th>Phone</th>
+                                    <th>{{user.user_phone}}</th>
+                                </tr>
+                                <tr>
+                                    <th>NIN</th>
+                                    <th>{{user.user_nin}}</th>
+                                </tr>
+                               
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <table class="table">
+                            <tbody>
+                            
+                                <tr>
+                                    <th>State</th>
+                                    <th>{{user.userstate.state_name}}</th> 
+                                </tr>
+
+                                <tr>
+                                    <th>LGA</th>
+                                    <th>{{user.userlga.lga_name}}</th> 
+                                    
+                                </tr>
+                                <tr>
+                                    <th>Address</th>
+                                    <th>{{user.user_address}}</th>
+                                </tr>
+                                
+                                <tr>
+                                    <th>Date Registered</th>
+                                    <th>{{user.user_datereg}}</th>
+                                   
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+               
+                
+
+                
+                
+        
+            
+        </div>
+        
+    <script>
+        function greet() {
+            var today = new Date();
+            var hour = today.getHours();
+            var greeting;
+            if (hour < 12) {
+                greeting = "Good morning";
+            } else if (hour < 16) {
+                greeting = "Good afternoon";
+            } else {
+                greeting = "Good evening";
+            }
+            var userFirstName = "{{ user.user_fname }}"; 
+
+            var fullGreeting = greeting + ", " + userFirstName + "!";
+
+            document.getElementById("greeting").textContent = fullGreeting;
+        }
+        greet();
+    </script>
+    </div>
+    
+{% endblock %}
+

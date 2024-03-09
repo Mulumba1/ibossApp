@@ -1,0 +1,159 @@
+{% extends "user/base.html" %}
+
+{% block content %}
+<br><br><br>
+<div class="container-fluid bg-secondary">
+    <div class="row">
+        <div class="col-lg-6 my-5 mx-auto bg-light">
+            <div class="text-center"><h2>REGISTRATION FORM</h2></div>
+            
+            <form action="" method="post">
+                {{ register.csrf_token }}
+                <div class="form-group">    
+                    <input type ="hidden" name= "csrf_token" value="{{ csrf_token() }}">
+                    
+                 </div>
+                 
+                 
+                 <div class="form form-group d-flex" style="gap: 10px;">
+                  <div class="form-group">
+                     {{register.fname.label(class="form-control-label")}}
+                     {{register.fname(class="form-control")}}
+                  </div>
+                  <div class="form-group">
+                     {{register.lname.label(class="form-control-label")}}
+                     {{register.lname(class="form-control")}}
+                  </div>
+                  <div class="form-group">
+                     {{register.othername.label(class="form-control-label")}}
+                     {{register.othername(class="form-control")}}
+                  </div>
+                  
+               
+               </div>
+
+                 <div class="form form-group d-flex" style="gap: 10px;">
+                  <div class="form-group">
+                     {{register.email.label(class="form-control-label")}}
+                     {{register.email(class="form-control")}}
+                  </div>
+                  <div class="form-group">
+                     {{register.phone.label(class="form-control-label")}}
+                     {{register.phone(class="form-control")}}
+                  </div>
+                  <div class="form-group">
+                     {{register.nin.label(class="form-control-label")}}
+                     {{register.nin(class="form-control")}}
+                  </div>
+               
+               </div>
+               <div class="form-group">
+                  {{register.address.label(class="form-control-label")}}
+                  {{register.address(class="form-control")}}
+               </div>
+                 
+               <div class="form-group row mb-3">
+                <div class="col-md-4">
+                    {{register.dob.label(class="form-control-label")}}
+                    {{register.dob(class="form-control")}}
+                 </div>
+                
+                <div class="col-md-4">
+                    {{register.state.label(class="form-control-label")}}
+                  <select name="state" id="state" class="form-control">
+                    <option value="">Select State</option>
+                    {% for state in states %}
+                    <option value="{{ state.state_id }}">{{ state.state_name }}</option>
+                    {% endfor %}
+                  </select>
+                 </div>
+                 <div class="col-md-4">
+                    {{register.lga.label(class="form-control-label")}}
+                  <select name="lga" id="lga" class="form-control">
+                    <option value="">Select LGA</option>
+                  </select>
+                  
+              </div>
+              
+              
+              </div>
+
+
+                <div class="d-flex form-group" style="gap:10px">
+                      <div class="form-group">
+                  {{register.password.label(class="form-control-label")}}
+                  {{register.password(class="form-control")}}
+                  {% if register.password.errors %}
+                      <div class="alert alert-danger">
+                          {% for error in register.password.errors %}
+                              {{ error }}
+                          {% endfor %}
+                      </div>
+                  {% endif %}
+               </div>
+               <div class="form-group">
+                  {{ register.confirm_password.label(class="form-control-label") }}
+                  {{ register.confirm_password(class="form-control") }}
+                  {% if register.confirm_password.errors %}
+                      <div class="alert alert-danger">
+                          {% for error in register.confirm_password.errors %}
+                              {{ error }}
+                          {% endfor %}
+                      </div>
+                  {% endif %}
+              </div>
+               </div>
+              
+                <div class="form-group">
+                  <div class="check">
+                     {{ register.check_field(class="form-check-input") }}
+                  {{ register.check_field.label(class="form-check-label") }}
+                  </div>
+                  </div>
+                
+                 <div class="form-group">
+                    {{register.submit(class="form-control btn btn-success butto")}}
+
+                   </div>
+                   <div class="form-group">
+                    <p>Already have an account? <a href="/login/" id="already">Login</a></p>
+ 
+                    </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+ 
+
+
+<script src="{{url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
+<script src="{{url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+ 
+<script>
+    
+    
+    $('#state').change(function(){
+      var state_id = $(this).val()
+      var csrf = '{{ csrf_token() }}'
+      $.ajax({
+        url: '/state/lgas/',
+        type: 'POST',
+        data: {"state_id":state_id, "csrf_token":csrf},
+        beforeSend: function(){
+          $('#lga').html('')
+        },
+        success: function(resp){
+          $('#lga').append("<option value=''>select LGA</option>")
+          for (let index = 0; index < resp.length; index++){
+            $('#lga').append(`<option value='${resp[index].lga_id}'>${resp[index].lga_name}</option>`);
+          }
+        }
+      })
+    })
+
+</script>
+
+
+{% endblock %}

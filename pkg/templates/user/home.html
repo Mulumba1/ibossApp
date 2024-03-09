@@ -1,0 +1,184 @@
+{% extends "user/base.html" %} 
+{% block content %}
+<br>
+<div
+  class="container-fluid d-flex justify-content-center flex-column align-items-center text-center"
+  id="index2">
+  <!-- <video id="backgroundVideo" autoplay loop muted>
+    <source src="/static/videos/estate2.mp4" type="video/mp4">
+</video> -->
+
+    {% set flashed_messages = get_flashed_messages(with_categories=True) %}
+        {% if flashed_messages %}
+            {% for category, message in flashed_messages %}
+        <div class="alert alert-{{ category }}">
+            {{ message }}
+        </div>
+            {% endfor %}
+        {% endif %}
+<br><br><br><br><br><br>
+  <div class="col-md-8 text-white rent">
+    <h1>RENT AND BUY</h1>
+    <h1>LUXURY APARTMENTS IN NIGERIA</h1>
+  </div>
+  <div class="col-md-6 d-flex gap-2">
+    <input type="search" name="" id="" class="form-control me-2" placeholder="Search for an Apartments, Houses, Shops and Lands in Nigeria" aria-label="Search" />
+    <button type="submit" class="btn ml-2">Search</button>
+  </div>
+
+  <div class="row bg-dark p-4 mt-4 rounded  " style="position: relative;top: 60px; margin-top: -60px;">
+    <div class="col-md-8 mx-auto card-body mt-3 rounded">
+      <p class="text-white" style="width: 40rem; position: relative;right: 85px; text-align: start; line-height: 30px; font-size: 20px;"> Welcome to iBoss, your premier destination for buying land, houses, and renting apartments. We are excited to assist you in finding your dream property or answering any questions you may have. Whether you're looking for a cozy home, a spacious piece of land, or the perfect apartment, our dedicated team is here to help. Feel free to reach out to us by filling out the form below, and we'll get back to you promptly.</p>
+      <button class="btn px-4 butto"><a href="/marketsquare/">BUY</a></button>
+      <button class="btn px-4 butto"><a href="/marketsquare/">RENT</a></button>
+    </div>
+  </div>
+  
+  
+  <!-- <div class="col-md-6 d-flex justify-content-around text-white mt-4 ">
+    <div class="d-flex flex-column">
+      <h4>Existing User</h4>
+      <button class="btn">
+        {% if session.get('useronline') == None %}
+        <a  href="/login/">Login</a>
+        {%else%}
+        <a  href="/logout/">Log out</a>
+        {% endif %}
+    </button>
+    </div>
+
+    <div class="d-flex flex-column align-items-center gap-4">
+      <h4>New User</h4>
+      <button class="btn"><a href="/register/">Sign Up</a></button>
+    </div>
+  </div> -->
+</div>
+
+
+
+<div class="body home">
+  <div class="heades">
+     
+      <h1><b>EXQUISITE ACCOMMODATIONS FOR RENT</b></h1>
+  </div>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+   <div class="col">
+     <div class="card h-100">
+       <img src="/static/images/house3.jpg" class="card-img-top" alt="..." style="max-height: 540px">
+       <div class="card-body">
+         <div class="card-footer"><h2><b>4 BEDROOM DUPLEX</b></h2></div>
+         
+         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+       </div>
+       
+       <div class="card-footer d-flex justify-content-around" >
+         <button class="btn w-40 butto">&#8358;200000000000000</button>
+         <button class="btn w-50 butto">Nassarawa</button>
+       </div>
+       <div class="card-footer d-flex justify-content-around">
+         <button class="btn w-30 butto">Details</button>
+         <button class="btn w-40 butto">Call: 07069741483</button>
+         <button class="btn w-30 butto">Chat</button>
+       </div>
+     </div>
+   </div>
+   <div class="col">
+     <div class="card h-100">
+       <img src="/static/images/house3.jpg" class="card-img-top" alt="..." style="max-height: 540px">
+       <div class="card-body">
+         <div class="card-footer"><h2><b>STUDENTS HOSTEL</b></h2></div>
+         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+       </div>
+       <div class="card-footer d-flex justify-content-around">
+         <button class="btn w-40 butto">&#8358;200000000000000</button>
+         <button class="btn w-50 butto">Sokoto</button>
+       </div>
+       <div class="card-footer d-flex justify-content-around">
+         <button class="btn w-30 butto">Details</button>
+         <button class="btn w-40 butto">Call: 07069741483</button>
+         <button class="btn w-30 butto">Chat</button>
+       </div>
+     </div>
+   </div>
+   <div class="col">
+     <div class="card h-100">
+       <img src="/static/images/house3.jpg" class="card-img-top" alt="..." style="max-height: 540px">
+       <div class="card-body">
+         <div class="card-footer"><h2><b>3 BEDROOM FLAT</b></h2></div>
+         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+       </div>
+       <div class="card-footer d-flex justify-content-around">
+         <button class="btn w-40 butto">&#8358;50000000</button>
+         <button class="btn w-50 butto">Port Harcourt</button>
+       </div>
+       <div class="card-footer d-flex justify-content-around">
+         <button class="btn w-30 butto">Details</button>
+         <button class="btn w-40 butto">Call: 07069741483</button>
+         <button class="btn w-30 butto">Chat</button>
+       </div>
+     </div>
+   </div>
+ </div>
+ <div class="row" style="min-height: 50px;"></div>
+ <div class="row row-cols-1 row-cols-md-3 g-4">
+   <div class="col">
+     <div class="card h-100">
+       <img src="/static/images/house3.jpg" class="card-img-top" alt="..." style="max-height: 540px">
+       <div class="card-body">
+         <div class="card-footer"><h2><b>4 BEDROOM DUPLEX</b></h2></div>
+         
+         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+       </div>
+       
+       <div class="card-footer d-flex justify-content-around" >
+         <button class="btn w-40 butto">&#8358;200000000000000</button>
+         <button class="btn w-50 butto">Nassarawa</button>
+       </div>
+       <div class="card-footer d-flex justify-content-around">
+         <button class="btn w-30 butto">Details</button>
+         <button class="btn w-40 butto">Call: 07069741483</button>
+         <button class="btn w-30 butto">Chat</button>
+       </div>
+     </div>
+   </div>
+   <div class="col">
+     <div class="card h-100">
+       <img src="/static/images/house3.jpg" class="card-img-top" alt="..." style="max-height: 540px">
+       <div class="card-body">
+         <div class="card-footer"><h2><b>STUDENTS HOSTEL</b></h2></div>
+         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+       </div>
+       <div class="card-footer d-flex justify-content-around">
+         <button class="btn w-40 butto">&#8358;200000000000000</button>
+         <button class="btn w-50 butto">Sokoto</button>
+       </div>
+       <div class="card-footer d-flex justify-content-around">
+         <button class="btn w-30 butto">Details</button>
+         <button class="btn w-40 butto">Call: 07069741483</button>
+         <button class="btn w-30 butto">Chat</button>
+       </div>
+     </div>
+   </div>
+   <div class="col">
+     <div class="card h-100">
+       <img src="/static/images/house3.jpg" class="card-img-top" alt="..." style="max-height: 540px">
+       <div class="card-body">
+         <div class="card-footer"><h2><b>3 BEDROOM FLAT</b></h2></div>
+         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+       </div>
+       <div class="card-footer d-flex justify-content-around">
+         <button class="btn w-40 butto">&#8358;50000000000</button>
+         <button class="btn w-50 butto">Port Harcourt</button>
+       </div>
+       <div class="card-footer d-flex justify-content-around">
+         <button class="btn w-30 butto">Details</button>
+         <button class="btn w-40 butto">Call: 07069741483</button>
+         <button class="btn w-30 butto">Chat</button>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+
+
+{% endblock %}

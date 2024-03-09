@@ -1,0 +1,29 @@
+{% extends "user/base.html" %}
+
+{% block content %}
+
+<br><br><br>
+<div class="container-fluid custom-login bg-secondary d-flex justify-content-center align-items-center">
+  <div class="col-mb-3 col-md-4 bg-light p-3 rounded">
+    <div class="text-center p-2"><h1>Upload Profile Image</h1></div>
+    <form action="/changedp/" method="post" enctype="multipart/form-data">
+      {{ changedp.csrf_token }}
+      
+      <div class="form-group ">
+        <!-- {{ changedp.pics.label(class="form-control-label") }} -->
+        {{ changedp.pics(class="form-control-file") }}
+      </div>
+      <div class="d-flex form-group p-2" style="gap: 30px;">
+          <div class="form-group">
+            {{ changedp.submit(class="form-control btn contact-btn") }}
+          </div>
+          <div class="form-group">
+            <button class="btn btn-danger"><a href="/cancel/">Cancel</a></button>
+           
+          </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

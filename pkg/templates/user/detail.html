@@ -1,0 +1,158 @@
+{% extends "user/base.html" %}
+
+{% block content %}
+<br><br><br><br>
+<div id="wrapper" style="background-color: #a1917e;">
+    <h2 style="text-align:center"></h2>
+    
+    <div class="container-fluid">
+      <div class="mySlides container-fluid">
+        <div class="numbertext">1 / 7</div>
+        <img src="/static/images/h1.jpg" style="width:100%">
+      </div>
+    
+      <div class="mySlides container-fluid">
+        <div class="numbertext">2 / 7</div>
+        <img src="/static/images/h2.jpg" style="width:100%">
+      </div>
+    
+      <div class="mySlides container-fluid">
+        <div class="numbertext">3 / 7</div>
+        <img src="/static/images/h3.jpg" style="width:100%">
+      </div>
+        
+      <div class="mySlides container-fluid">
+        <div class="numbertext">4 / 7</div>
+        <img src="/static/images/h4.jpg" style="width:100%">
+      </div>
+    
+      <div class="mySlides container-fluid">
+        <div class="numbertext">5 / 7</div>
+        <img src="/static/images/h5.jpg" style="width:100%">
+      </div>
+        
+      <div class="mySlides container-fluid">
+        <div class="numbertext">6 / 7</div>
+        <img src="/static/images/h6.jpg" style="width:100%">
+      </div>
+      <div class="mySlides container-fluid">
+        <div class="numbertext">7 / 7</div>
+        <img src="/static/images/h7.jpg" style="width:100%">
+      </div>
+        
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+    <!-- <hr>
+      <div class="caption-container" style="min-width: 100%;">
+        <p id="caption"></p>
+      </div> -->
+      <div style="min-width: 100%; min-height: 20px;">
+        
+      </div>
+    
+      <div class="row" style="border: 5px solid blanchedalmond;">
+        <div class="column">
+          <img class="demo cursor" src="/static/images/h1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Swimming Pool">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="/static/images/h2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Wine Bar">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="/static/images/h3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Bedrooms">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="/static/images/h4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Recreation Facilities">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="/static/images/h5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Master Bedroom">
+        </div>    
+        <div class="column">
+          <img class="demo cursor" src="/static/images/h6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Shopping Mall">
+        </div>
+      </div>
+   
+      <div class="row">
+        <div class="col-md-6 pt-5" style="background-color: #a1917e;">
+            <table class="table">
+                <h1 class="text-center p-3">4 BEDROOM FLAT</h1>
+                <tbody class="p-4">
+                    <tr>
+                        <!-- <th>Discription</th> -->
+                        <th>Due to the widespread use of tables across third-party widgets like calendars and date pickers, we’ve designed our tables to be opt-in. Just add the base class .table to any, then extend with custom styles or our various included modifier classes.
+    
+                            Using the most basic table markup, here’s how .table-based tables look in Bootstrap. All table styles are inherited in Bootstrap 4, meaning any nested tables will be styled in the same manner as the parent.</th>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6 d-flex align-items-center" style="background-color: #a1917e;">
+            <table class="table  mt-5 ml-5 table-borderedless">
+                <thead>
+                    <tr>
+                        <th>Amount:</th>
+                    <th class=""><h5><strong>&#8358; 20000</strong></h5></th>
+                    </tr>
+                    <tr>
+                        <th>Address:</th>
+                        <th><h5><strong>No 1 Adisa Idowu street Kola Alagbado</strong></h5></th>
+                    </tr>
+                    <tr>
+                        <th>State:</th>
+                        <th><h5><strong>Lagos</strong></h5></th>
+                    </tr>
+                    
+                    <tr>
+                        <th>Phone:</th>
+                        <th><h5><strong><a href="tel:0908345276498" id="detailphone">0908345276498</a></strong></h5></th>
+                    </tr>
+                    <tr>
+                        <th>Email:</th>
+                        
+                        <th><h5><strong><a href="mailto:talk2mulumba@gmail.com" id="detailemail">talk2mulumba@gmail.com</a></strong></h5></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    
+      
+    
+    </div>
+</div>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    } 
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("demo");
+      let captionText = document.getElementById("caption");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+
+
+    
+    </script>
+
+{% endblock content %}

@@ -1,0 +1,126 @@
+{% extends "user/base.html" %} 
+
+{% block content %}
+<body class="body bg-secondary">
+   <header class="header">
+       <h1><b>Welcome To iBoss</b></h1>
+       <h1><b>BUY OR LEASE COMMERCIAL OR FARMING LAND</b></h1>
+   </header>
+   <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card h-100">
+        <img src="/static/images/land.jpg" class="card-img-top" alt="..." style="max-height: 540px">
+        <div class="card-body">
+          <div class="card-footer"><h3><b>15 ACRES COMMERCIAL LAND</b></h3></div>
+          
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+        
+        <div class="card-footer d-flex justify-content-around" >
+          <button class="btn w-40 butto">&#8358;200000000000000</button>
+          <button class="btn w-50 butto">Nassarawa</button>
+        </div>
+        <div class="card-footer d-flex justify-content-around">
+          <button class="btn w-30 butto">Details</button>
+          <button class="btn w-40 butto">Call: 07069741483</button>
+          <button class="btn w-30 butto" onclick="toggleChat()">Chat</button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="/static/images/land3.jpg" class="card-img-top" alt="..." style="max-height: 540px">
+        <div class="card-body">
+          <div class="card-footer"><h3><b>10 ACRES FARMING LAND</b></h3></div>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        </div>
+        <div class="card-footer d-flex justify-content-around">
+          <button class="btn w-40 butto">&#8358;200000000000000</button>
+          <button class="btn w-50 butto">Sokoto</button>
+        </div>
+        <div class="card-footer d-flex justify-content-around">
+          <button class="btn w-30 butto">Details</button>
+          <button class="btn w-40 butto">Call: 07069741483</button>
+          <button class="btn w-30 butto">Chat</button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="/static/images/land2.jpg" class="card-img-top" alt="..." style="max-height: 540px">
+        <div class="card-body">
+          <div class="card-footer"><h3><b>5 PLOTS RESIDENTIAL LAND</b></h3></div>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        </div>
+        <div class="card-footer d-flex justify-content-around">
+          <button class="btn w-40 butto">&#8358;50000000</button>
+          <button class="btn w-50 butto">Port Harcourt</button>
+        </div>
+        <div class="card-footer d-flex justify-content-around">
+          <button class="btn w-30 butto">Details</button>
+          <button class="btn w-40 butto">Call: 07069741483</button>
+          <button class="btn w-30 butto">Chat</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="min-height: 50px;"></div>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card h-100">
+        <img src="/static/images/house3.jpg" class="card-img-top" alt="..." style="max-height: 540px">
+        <div class="card-body">
+          <div class="card-footer"><h2><b>4 BEDROOM DUPLEX</b></h2></div>
+          
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+        
+        <div class="card-footer d-flex justify-content-around" >
+          <button class="btn w-40 butto">&#8358;200000000000000</button>
+          <button class="btn w-50 butto">Nassarawa</button>
+        </div>
+        <div class="card-footer d-flex justify-content-around">
+          <button class="btn w-30 butto">Details</button>
+          <button class="btn w-40 butto">Call: 07069741483</button>
+          <button class="btn w-30 butto">Chat</button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="/static/images/house3.jpg" class="card-img-top" alt="..." style="max-height: 540px">
+        <div class="card-body">
+          <div class="card-footer"><h2><b>STUDENTS HOSTEL</b></h2></div>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        </div>
+        <div class="card-footer d-flex justify-content-around">
+          <button class="btn w-40 butto">&#8358;200000000000000</button>
+          <button class="btn w-50 butto">Sokoto</button>
+        </div>
+        <div class="card-footer d-flex justify-content-around">
+          <button class="btn w-30 butto">Details</button>
+          <button class="btn w-40 butto">Call: 07069741483</button>
+          <button class="btn w-30 butto">Chat</button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="/static/images/house3.jpg" class="card-img-top" alt="..." style="max-height: 540px">
+        <div class="card-body">
+          <div class="card-footer"><h2><b>3 BEDROOM FLAT</b></h2></div>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        </div>
+        <div class="card-footer d-flex justify-content-around">
+          <button class="btn w-40 butto">&#8358;50000000000</button>
+          <button class="btn w-50 butto">Port Harcourt</button>
+        </div>
+        <div class="card-footer d-flex justify-content-around">
+          <button class="btn w-30 butto">Details</button>
+          <button class="btn w-40 butto">Call: 07069741483</button>
+          <button class="btn w-30 butto">Chat</button>
+        </div>
+      </div>
+    </div>
+  </div>
+   {% endblock content %}

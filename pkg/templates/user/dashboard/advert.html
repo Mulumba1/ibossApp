@@ -1,0 +1,27 @@
+{% extends "user/base.html" %}
+
+{% block content %}
+
+
+    <br><br><br>
+    <div class="d-flex main">
+        <div class="sidebar pt-5">
+                <h2 class="d-flex justify-content-center">Welcome! {{session.get('name')}}</h2>
+                <ul class="list-group" id="listgroup">
+                    <li class="list-group-item"><a href="/profile/">Profile</a></li>
+                    <li class="list-group-item"><a href="/mymarket/">My markets</a></li>
+                    <li class="list-group-item"><a href="/upload/">Upload Property</a></li>
+                    <li class="list-group-item"><a href="/performance/">performances</a></li>
+                    <li class="list-group-item" id="sidebars">My Adverts</li>
+                    <li class="list-group-item"><a href="/mymessage/">Massages</a></li>
+                    <li class="list-group-item"><a href="/orders">Orders</a></li>
+                    <li class="list-group-item"><a href="/settings/">Settings</a></li>
+                    <li class="list-group-item"><a href="/logout/">Log Out</a></li>
+                </ul>
+            </div>
+            <div class="pt-5 bg-light content">
+                <h2>Main content</h2>
+                <p>This is my Advert Page</p>
+            </div>
+        </div>
+{% endblock %}

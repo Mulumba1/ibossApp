@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Home Page</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{{url_for('static', filename='css/scrolling-nav.css')}}" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="{{ url_for('static', filename='fonts.gstatic.com') }}" crossorigin>
+  <link href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{{url_for('static', filename='css/scrolling-nav.css')}}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='font_awesome/css/all.css') }}" rel="stylesheet">
+
+
+
+  <style>
+    /* admin dashboard starts */
+#admindash{
+  color:rgb(59,169,135) ;
+}
+#selected-images{
+  display: flex;
+  gap: 6px;
+  position: absolute;
+  left: 130px;
+}
+.admin a:hover {
+  color: gold !important;
+  text-decoration: none !important;
+}
+.admin{
+  color:rgb(59,169,135) !important;
+}
+.admin:hover{
+  border: 5px solid gold;
+  color: gold !important;
+}
+/* #admindash a:hover{
+  color:gold;
+} */
+
+    /* start edit profile  */
+#editdata{
+  min-width: 350px;
+}
+
+    /* contact form input */
+    .text textarea {
+    height: 200px;
+}
+#formdata{
+  width: 280px;
+}
+/* start of details css */
+#detailemail{
+        color: black;
+      }
+      #detailphone{
+        color: black;
+      }
+.details{
+    border: 2px solid blue;
+    min-height: 100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+.container {
+  position: relative;
+}
+
+.mySlides img{
+    height: 600px;
+    object-fit: cover;
+}
+
+
+.mySlides {
+  display: none;
+}
+
+
+.cursor {
+  cursor: pointer;
+}
+
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+/* end of details css */
+
+
+    
+    .body {
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .check{
+          margin-left: 20px;
+        }
+        .dash {
+        min-height: 100px;
+      }
+      td a{
+        color: blue;
+      }
+      td a:hover{
+        color: red;
+      }
+    #forget {
+        color: blue;
+      }
+      .welcome {
+        color: red;
+      }
+      
+      #already {
+        color: blue; 
+      }
+      
+      #terms {
+            color: blue;
+        }
+        #register {
+            color: blue;
+      }
+      #edit {
+        color: #2a3342; 
+      }
+      
+    .t{
+      background-color: #93a4da;
+    }
+    .y{
+      background-color: #93a4da;
+    }
+    .header {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 1em 0;
+      /* margin-top: 5rem; */
+      padding-top: 7rem;
+    }
+    .home{
+      background-color:#a1917e ;
+    }
+    .heades{
+      background-color: #a1917e;
+      color: white;
+      text-align: center;
+      padding: 1em 0;
+      /* margin-top: 5rem; */
+      padding-top: 7rem;
+    }
+
+    .section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+   }
+
+        .heading {
+            color: #3ba987;
+        }
+
+        .para {
+            margin-bottom: 1.5em;
+        }
+
+        .ulist {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .list {
+            margin-bottom: 1em;
+        }
+        #join{
+          color: #3ba987 !important;
+          text-decoration: underline;
+        }
+
+    body{
+      font-family: 'Archivo Black', sans-serif;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .navbar-brand img{
+      height: 80px;
+      object-fit: contain;
+    }
+    
+   .custom-login{
+    /* background-image: url("../static/images/house14.jpg"); */
+    background-size: cover;
+    min-height: 100vh;
+   }
+   li{
+        
+        list-style: none;
+      }
+    #contact{
+      background-image: url("../static/images/house9.jpg");
+      min-height: 100vh;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+   
+   #index2 {
+        min-height: 100vh;
+        min-width: 100%;
+        background-image: url("../static/images/house5.webp");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        
+      }
+    a{
+      color: white;
+    }
+    .sidebar{
+            background-color:rgb(42,51,66);
+            color: white;
+            width: 25%;
+            padding: 10px 40px;
+        }
+        .content{
+          width: 75%;
+          padding: 20px;
+        }
+        .sidebar li{
+            background-color: rgb(35,34,50);
+        }
+        #sidebars{
+            background-color: rgb(229,47,40);
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        
+        .sidebar ul li a{
+            color: white;
+            text-decoration: none;
+        }
+        
+  #myNav{
+    /* background-color: #e52f28; */
+    background-color: rgb(59,169,135);
+    color: white;
+    padding: 0 40px;
+    }
+    .rent h1{
+      font-size: 50px;
+      font-weight: 900;
+    }
+    .contact-btn{
+      background-color:rgb(59,169,135);
+      color: #fff;
+    }
+    
+    .butto{
+      background-color: rgb(59,169,135) !important;
+      color: white !important;
+    }
+    a:hover{
+      /* color: red !important; */
+      text-decoration: underline !important;
+    }
+    .card img{
+      max-height: 180px;
+    }
+    .bts{
+      border: 2px solid rgb(0,33,35);
+      font-weight: 1000;
+    }
+    hr{
+      /* background-color: #e52f28; */
+      background-color: #fff;
+    }
+    .comt{
+      padding-top: 150px;
+    }
+    .forms{
+      margin-bottom: 60px;
+    }
+    footer{
+      background-color: rgb(0,33,35);
+    }
+  </style>
+
+</head>
+
+<div id="page-top">
+
+  <!-- Navigation -->
+  <div class="containe">
+    <div class="row" id="myNav2">
+      <div class="col-md-12" id="">
+        <div class="col-md-12" id="">
+          <nav class="d-flex justify-content-around align-items-center fixed-top" id="myNav">
+              <a class="navbar-brand" href="#"><img src="{{url_for('static', filename='images/logo.png')}}" alt=""></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+                <ul class="d-flex align-items-center gap-4 list-inline">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/about/">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/sendmessage/">Send Message</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/rentapartment/">Rent House</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/buyhouse/">Buy House</a>
+                  </li> 
+                  <li class="nav-item">
+                    <a class="nav-link" href="/buyland/">Lands</a>
+                  </li> 
+                  <li class="nav-item">
+                    <a class="nav-link" href="/contact/">Contact Us</a>
+                  </li>   
+                  <li class="nav-item">
+                    <a class="nav-link" href="/register/">Register</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/display/image/">Display Image</a>
+                  </li> 
+                  <li class="nav-item">
+                    <a class="nav-link" href="/send/email/">Send mail</a>
+                  </li> 
+                  <li class="nav-item">
+                    {% if session.get('useronline') == None %}
+                    <a class="nav-link js-scroll-trigger" href="/login/">login</a>
+                    {% else %}
+                    <a class="nav-link js-scroll-trigger" href="/dashboard/">dashboard</a>
+                     {% endif %}
+                  </li>
+                  
+                </ul>
+                
+             </div>  
+          </nav>
+      </div>
+    </div> 
+  </div>
+  </div>
+    
+  
+  
+  {% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{category}}">{{message}}</div>
+        {%endfor%}
+        {%endif%}
+        {%endwith%}
+
+
+  {% block content %}
+
+  {% endblock %}
+
+  <!-- Footer -->
+  <footer class="py-">
+    <hr>
+    <div class="container-fluid footer">
+      <div class="row">
+          <div class="col-md-4 p-4 d-flex justify-content-center">
+              <ul>
+                  <li><a href="/about/">About Us</a></li>
+                  <li><a href="#">Rent appartments</a></li>
+                  <li><a href="#">Buy Houses</a></li>
+                  <li><a href="#">Buy Lands</a></li>
+                  <li><a href="#">Sell Houses</a></li>
+                  <li><a href="#">Sell Lands</a></li>
+      
+              </ul>
+          </div>
+          
+          <div class="col-md-4 p-4 ">
+              <ul>
+                  <li><a href="#">Feedback</a></li>
+                  <li><a href="/faq/">FAQ</a></li>
+                  <li><a href="#">Careers</a></li>
+              </ul>
+              <form action="/newsletter/" method="post" class="row">
+               
+                  <h4 class="text-white">Newsletter</h4>
+                  <input type ="hidden" name= "csrf_token" value="{{ csrf_token() }}">
+                  <div class="col-md-6"><input type="email" name="email" value="email" class="form-control"></div>
+                  <div class="col-md-2 "><button class="btn butto">Subscribe</button></div>   
+              </form>
+              <p class="mt-4 text-center text-white">Copyright &copy; Mulumba <span id="year"></span></p>
+          </div>
+
+          <div class="col-md-4 p-4 d-flex justify-content-center align-items-center">  
+          <ul>
+              <li ><a href="/contact/">Contact Us</a></li>
+              <li class="p-1"><a href="https://www.facebook.com/ede.m.uchenna?mibextid=LQQJ4d"><img src="../static/images/facebook.webp" alt="" style="max-height: 30px; margin-right: 10px;">Facebook</a></li>
+              <li class="p-1"><a href="https://twitter.com/Knight_ksm/"><img src="../static/images/twitter.PNG" alt=""style="max-height: 30px; margin-right: 10px;">Twitter</a></li>
+              <li class="p-1"><a href="#"><img src="../static/images/linkedin.PNG" alt="" style="max-height: 30px; margin-right: 10px;">Linkedin</a></li>
+              <li class="p-1"><a href="https://www.instagram.com/mazi_uchenna?igsh=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr"> <img src="../static/images/instagram.PNG" alt="" style="max-height: 30px; margin-right: 10px;">Instagram</a></li>
+              <li class="p-1"><a href="https://wa.me/+2347069741483"><img src="../static/images/whatsapp.PNG" alt="" style="max-height: 30px; margin-right: 10px;">Chat us on Whatsapp</a></li>
+              <li class=" p-1"><a href="mailto:support@iboss.com"><img src="../static/images/email.PNG" alt="" style="max-height: 30px; margin-right: 10px;">support@iboss.com</a></li>
+              <li class="ml-5"><a href="mailto:talk2mulumba@gmail.com">talk2mulumba@gmail.com</a></li>
+              
+              
+              
+          </ul>
+          </div>
+      </div>
+  </div>
+  </footer>
+
+  
+
+  <script src="{{url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
+
+  <script src="{{url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+  
+
+  <script type="text/JavaScript">
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+
+  </script>
+  
+
+</div>
+
+</html>

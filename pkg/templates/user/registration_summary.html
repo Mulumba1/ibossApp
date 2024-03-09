@@ -1,0 +1,62 @@
+{% extends "user/base.html" %} 
+
+{% block content %}
+<br><br><br><br><br><br>
+<div class="row">
+    <div class="col-md-6">
+        <table class="table">
+            <h1 class="text-center">CONFIRMATION OF REGISTRATION</h1>
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th>{{ user.user_fname }} {{ user.user_lname }} {{ user.user_othername }}</th>
+                   
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <th>{{user.user_email}}</th>
+                </tr>
+                <tr>
+                    <th>Phone</th>
+                    <th>{{user.user_phone}}</th>
+                </tr>
+                <tr>
+                    <th>NIN</th>
+                    <th>{{user.user_nin}}</th>
+                </tr>
+               
+               
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-6">
+        <table class="table">
+            <tbody>
+            
+                <tr>
+                    <th>State</th>
+                    <th>{{user.userstate.state_name}}</th> 
+                </tr>
+
+                <tr>
+                    <th>LGA</th>
+                    <th>{{user.userlga.lga_name}}</th> 
+                    
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <th>{{user.user_address}}</th>
+                </tr>
+                
+                <tr>
+                    <th>Date Registered</th>
+                    <th>{{user.user_datereg}}</th>
+                   
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% endblock %}

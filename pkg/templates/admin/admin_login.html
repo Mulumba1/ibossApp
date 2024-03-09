@@ -1,0 +1,43 @@
+{% extends "user/base.html" %}
+
+{% block content %}
+
+
+<br><br><br>
+<div class="container-fluid custom-login bg-secondary d-flex justify-content-center align-items-center">
+  <div class="col-mb-3 col-md-4 bg-light p-3">
+    <div class="text-center"><h1>Admin Login</h1></div>
+    <form action="" method="post">
+      {{ form.csrf_token }}
+      <div class="form-group">
+        {{ form.username.label(class="form-control-label") }}
+        {{ form.username(class="form-control") }}
+        <span style="color: red;">
+          {% if form.username.errors %}
+            {% for error in form.username.errors %}
+              {{ error }}
+            {% endfor %}
+          {% endif %}
+        </span>
+      </div>
+      <div class="form-group">
+        {{ form.password.label(class="form-control-label") }}
+        {{ form.password(class="form-control") }}
+        <span style="color: red;">
+          {% if form.password.errors %}
+            {% for error in form.password.errors %}
+              {{ error }}
+            {% endfor %}
+          {% endif %}
+        </span>
+      </div>
+      <div class="form-group">
+        {{ form.submit(class="form-control btn contact-btn") }}
+      </div>
+      
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}

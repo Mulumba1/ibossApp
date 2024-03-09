@@ -1,0 +1,74 @@
+{% extends "user/base.html" %}
+
+{% block content %}
+
+<br><br><br>
+
+
+
+
+<div class="container-fluid">
+    <div class="row row-cols-1 row-cols-md-3 g-2">
+      {% for image in images %}
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='propertyImages/' + image.image_name) }}" class="card-img-top" alt="Property Image">
+          <div class="card-body">
+            <h5 class="card-title">STUDENTS HOSTEL</h5>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          </div>
+          <div class="card-footer d-flex justify-content-around">
+            <button class="btn w-40 butto">&#8358;200000000000000</button>
+            <button class="btn w-50 butto">Sokoto</button>
+          </div>
+          <div class="card-footer d-flex justify-content-around">
+            <button class="btn w-30 butto"><a href="/details/">Details</a></button>
+            <button class="btn w-40 butto">Call: 07069741483</button>
+            <button class="btn w-30 butto">Chat</button>
+          </div>
+        </div>
+      </div>
+      
+      {% endfor %}
+    </div>
+  </div>
+  
+  
+
+
+<!-- <div class="col">
+    <div class="card h-100">
+        {% for filename in unique_filenames %}
+        <img src="{{ url_for('static', filename='propertyImages/' + filename) }}" alt="Property Image">
+        {% endfor %}
+      <div class="card-body">
+        <div class="card-footer"><h2><b>STUDENTS HOSTEL</b></h2></div>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer d-flex justify-content-around">
+        <button class="btn w-40 butto">&#8358;200000000000000</button>
+        <button class="btn w-50 butto">Sokoto</button>
+      </div>
+      <div class="card-footer d-flex justify-content-around">
+        <button class="btn w-30 butto">Details</button>
+        <button class="btn w-40 butto">Call: 07069741483</button>
+        <button class="btn w-30 butto">Chat</button>
+      </div>
+    </div>
+  </div> -->
+
+
+
+
+<!-- <div>
+    <h1>Image Display</h1>
+   
+    <div>
+        {% for filename in unique_filenames %}
+            <img src="{{ url_for('static', filename='propertyImages/' + filename) }}" alt="Property Image" style="max-height: 400px; max-width: 282px; margin: 5px;">
+        {% endfor %}
+    </div>
+    
+</div> -->
+
+{% endblock content %}

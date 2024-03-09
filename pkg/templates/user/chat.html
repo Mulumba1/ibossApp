@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat App</title>
+</head>
+<body>
+
+<div id="chatBox" style="display: none;">
+  <textarea id="chatMessages" rows="10" cols="30" readonly></textarea>
+  <input type="text" id="userInput" placeholder="Type your message...">
+  <button onclick="sendMessage()">Send</button>
+</div>
+
+<div class="card-footer d-flex justify-content-around">
+  <button class="btn w-30">Details</button>
+  <button class="btn w-40" onclick="call()">Call: 07069741483</button>
+  <button class="btn w-30" onclick="toggleChat()">Chat</button>
+</div>
+
+<script>
+function toggleChat() {
+  var chatBox = document.getElementById("chatBox");
+  if (chatBox.style.display === "none") {
+    chatBox.style.display = "block";
+  } else {
+    chatBox.style.display = "none";
+  }
+}
+
+function sendMessage() {
+  var userInput = document.getElementById("userInput").value;
+
+  
+  $.ajax({
+    url: '/sendmessage',
+    type: 'POST',
+    data: { 'user_input': userInput },
+    success: function (response) {
+      if (response.success) {
+        var chatMessages = document.getElementById("chatMessages");
+        chatMessages.value += "User: " + userInput + "\n";
+        document.getElementById("userInput").value = "";
+      }
+    },
+    error: function (error) {
+      console.error('Error sending message:', error);
+    }
+  });
+}
+</script>
+
+</body>
+</html>

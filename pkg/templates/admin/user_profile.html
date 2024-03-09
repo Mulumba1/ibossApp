@@ -1,0 +1,65 @@
+{% extends "user/base.html" %}
+
+{% block content %}
+
+<header class="header">
+    <h1><b>Welcome To iBoss</b></h1>
+    <h1><b>COMPREHENSIVE LIST OF ALL USERS</b></h1>
+   <div class="d-flex justify-content-end form-group mr-5 pt-4" style="gap: 20px;">
+   
+    <div class="d-flex">
+        <label for="" class="form-control-label">User Ref</label>
+        <input type="search" name="" id="" class="form-control">
+    </div>
+    <button type="submit" class="btn-outline-success btn-lg butto">Search</button>
+   </div>
+</header>
+<div class="row">
+    <div class="col-md">
+        <table class="table table-bordered table-hover table-stripped">
+            <thead>
+                <tr>
+                    <th>S/No</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Other Names</th>
+                    <th>NIN</th>
+                    <th>Ref No</th>
+                    <th>Phone No</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>State</th>
+                    <th>LGA</th>
+                    <th>Date Reg</th>
+                </tr>
+
+            </thead>
+            {% for user in users %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td >{{ user.user_fname }}</td>
+                    <td>{{ user.user_lname }}</td>
+                    <td>{{ user.user_othername }}</td>
+                    <td>{{user.user_nin}}</td>
+                    <td>{{user.user_ref}}</td>
+                    <td>{{user.user_phone}}</td>
+                    <td>{{user.user_email}}</td>
+                    <td>{{user.user_address}}</td>
+                    <td>{{user.userstate.state_name}}</td>
+                    <td>{{user.userlga.lga_name}}</td>
+                    <td>{{user.user_datereg}}</td>
+                </tr>
+                
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+
+       
+    </div>
+    
+</div>
+
+
+{% endblock %}

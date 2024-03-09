@@ -1,0 +1,133 @@
+{% extends "user/base.html" %}
+
+{% block content %}
+
+
+    <br><br><br>
+    <div class="d-flex main">
+        <div class="sidebar pt-5">
+                <h2 class="d-flex justify-content-center">Welcome! {{session.get('name')}}</h2>
+                <ul class="list-group" id="listgroup">
+                    <li class="list-group-item"><a href="/dashboard/">Profile</a></li>
+                    <li class="list-group-item" id="sidebars">My Market</li>
+                    <li class="list-group-item"><a href="/upload/">Upload Property</a></li>
+                    <li class="list-group-item"><a href="/performance/">performances</a></li>
+                    <li class="list-group-item"><a href="/myadverts">My Adverts</a></li>
+                    <li class="list-group-item"><a href="/mymessage/">Massages</a></li>
+                    <li class="list-group-item"><a href="/orders">Orders</a></li>
+                    <li class="list-group-item"><a href="/settings/">Settings</a></li>
+                    <li class="list-group-item"><a href="/logout/">Log Out</a></li>
+           </ul>
+            </div>
+            <div class="pt-5 bg-light content">
+                <div class="row d-flex justify-content-around">
+                    <div class="col-md-2 bg-success rounded dash">Total Number of Customers</div>
+                    <div class="col-md-2 bg-success rounded dash">No of Sales</div>
+                    <div class="col-md-2 bg-danger rounded dash">No of Tenants</div>
+                    <div class="col-md-2 bg-info rounded dash">No Awaiting</div>
+                    <div class="col-md-2 bg-warning rounded dash">Awaiting Aproval</div>
+                </div>
+                <br><br>
+                <div class="row">
+                    <form action="" class="form-group">
+                        <div class="d-flex justify-content-around form-group">
+                            <div class="form-group col-md-3 d-flex">
+                                <div><label for="" class="form-label">Property Name</label></div>
+                                <div><input type="search" name="" id="" class="form-control" ></div>
+                            </div>
+                            <div class="form-group col-md-3 d-flex">
+                                <div><label for="" class="form-label">Orders date</label></div>
+                                <div><input type="date" name="" id="" class="form-control"></div>
+                            </div>
+                            <div class="form-group col-md-3 d-flex">
+                                <div><label for="" class="form-label">Orders Time</label></div>
+                                <div><input type="time" name="" id="" class="form-control"></div>
+                            </div>
+                            <div class="form-group col-md-3 d-flex">
+                                <div><label for="" class="form-label">Orders Type</label></div>
+                                <div><input type="search" name="" id="" class="form-control"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                    
+                       
+                       
+                       
+                    
+               
+                <div class="row">
+                    <table class="table table-striped table-bordered mx-auto">
+                        <thead class="table-dark">
+                            <tr >
+                                <th>Ref No</th>
+                                <th style="width: 500px;">Property Name</th>
+                                <th>Status</th>
+                                <th>Amount</th>
+                                <th>Details</th>
+                                <th>Action</th>
+                                <th>Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-success">
+                                <td>678BG</td>
+                                <td>3 Plots of Land</td>
+                                <td>Avaliable</td>
+                                <td>&#8358;70000</td>
+                                <td> <a href="">View<i class="fas fa-eye"></i></a></td>
+                                <td><a href="">Delete<i class="fas fa-trash-alt"></i></a></td>
+                                <td><a href="">Edit<i class="fas fa-edit"></i></a></td>
+                            </tr>
+                            <tr class="table-danger">
+                                <td>582FB</td>
+                                <td>2 Bedroom Flats</td>
+                                <td>Sold</td>
+                                <td>&#8358;100000</td>
+                                <td> <a href="">View<i class="fas fa-eye"></i></a></td>
+                                <td><a href="">Delete<i class="fas fa-trash-alt"></i></a></td>
+                                <td><a href="">Edit<i class="fas fa-edit"></i></a></td>
+                            </tr>
+                            <tr class="table-info">
+                                <td>426HJ</td>
+                                <td>Students Hostel</td>
+                                <td>Pending Approval</td>
+                                <td>&#8358;40000</td>
+                                <td> <a href="">View<i class="fas fa-eye"></i></a></td>
+                                <td><a href="">Delete<i class="fas fa-trash-alt"></i></a></td>
+                                <td><a href="">Edit<i class="fas fa-edit"></i></a></td>
+                            </tr>
+                            <tr class="table-success">
+                                <td>104LH</td>
+                                <td>Filling Station</td>
+                                <td>Avaliable</td>
+                                <td>&#8358;150000</td>
+                                <td> <a href="">View<i class="fas fa-eye"></i></a></td>
+                                <td><a href="">Delete<i class="fas fa-trash"></i></a></td>
+                                <td><a href="">Edit<i class="fas fa-edit"></i></a></td>
+                            </tr>
+                            <tr class="table-success">
+                                <td>678BG</td>
+                                <td>3 Plots of Land</td>
+                                <td>Avaliable</td>
+                                <td>&#8358;70000</td>
+                                <td> <a href="">View<i class="fas fa-eye"></i></a></td>
+                                <td><a href="">Delete<i class="fas fa-trash-alt"></i></a></td>
+                                <td><a href="">Edit<i class="fas fa-edit"></i></a></td>
+                            </tr>
+                            <tr class="table-danger">
+                                <td>582FB</td>
+                                <td>2 Bedroom Flats</td>
+                                <td>Sold</td>
+                                <td>&#8358;100000</td>
+                                <td> <a href="">View<i class="fas fa-eye"></i></a></td>
+                                <td><a href="">Delete<i class="fas fa-trash-alt"></i></a></td>
+                                <td><a href="">Edit<i class="fas fa-edit"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+{% endblock %}

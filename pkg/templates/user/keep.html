@@ -1,0 +1,72 @@
+{% extends "user/base.html" %}
+
+{% block content %}
+<br><br><br><br><br>
+
+{% set flashed_messages = get_flashed_messages(with_categories=True) %}
+            {% if flashed_messages %}
+                {% for category, message in flashed_messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+                {% endfor %}
+            {% endif %}
+
+
+<div class="container">
+
+    <div class="row">
+        
+        <h3>Dear {{session.get('user_name')}},</h3>
+        
+        
+    </div>
+
+
+<div class="row">
+    <p>Congratulations and welcome to iBoss - your one-stop platform for showcasing your properties to potential buyers and tenants without the hassle of intermediaries. We are thrilled to have you on board!</p>
+    <p>At iBoss, we empower property owners like you to directly connect with individuals seeking houses, farmland, or commercial land for sale or rent. Our user-friendly platform ensures a seamless experience, allowing you to effortlessly showcase your properties and reach a wide audience.</p>
+    
+    <ul>
+        <li><h3>Key Features:</h3></li>
+        <li><p>Effortless Listings: Easily create and manage property listings.</p></li>
+        <li><p>Direct Communication: Connect directly with interested buyers or tenants.</p></li> 
+        <li><p>Maximum Exposure: Reach a diverse audience of potential clients.</p></li>
+    </ul>
+    <p>Thank you for choosing iBoss. We look forward to supporting you in your property ventures and helping you find the right buyers or tenants.</p>
+    <p>If you have any questions or need assistance, feel free to reach out to our support team at <a class="welcome" href="mailto:support@iboss.com.">support@iboss.com.</a> Happy property showcasing!</p>
+    <p>Best regards,</p>
+    
+    
+       <div>
+        <p>iBoss Team</p>
+        <button type="submit" class="btn btn-success"><a href="/login/">Login Here</a></button>
+        <button type="submit" class="btn btn-success"><a href="/print/confirmation/">Print Confirmation</a></button>
+    
+       </div>
+    
+    
+        
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+            {% endblock content %}
+
+

@@ -1,0 +1,163 @@
+{% extends "user/base.html" %}
+{% block content %}
+
+<br><br><br><br>
+
+        
+        <!-- <ul class="list-group" id="listgroup">
+            <li class="list-group-item"><a href="/profile/">Profile</a></li>
+            <li class="list-group-item"><a href="/mymarket/">My markets</a></li>
+            <li class="list-group-item" id="sidebars">Upload Property</li>
+            <li class="list-group-item" id="sidebars">performances</li>
+            <li class="list-group-item"><a href="/myadverts/">My Adverts</a></li>
+            <li class="list-group-item"><a href="/message">Massages</a></li>
+            <li class="list-group-item"><a href="/orders/">Orders</a></li>
+            <li class="list-group-item"><a href="/settings/">Settings</a></li>
+            <li class="list-group-item"><a href="/logout/">Log Out</a></li>
+        </ul> -->
+
+        <div class="d-flex main">
+            <div class="sidebar pt-5">
+                    <h2 class="d-flex justify-content-center">Welcome! {{session.get('name')}}</h2>
+                    <ul class="list-group" id="listgroup">
+                        <li class="list-group-item"><a href="/profile/">Profile</a></li>
+                        <li class="list-group-item"><a href="/mymarket/">My markets</a></li>
+                        <li class="list-group-item" id="sidebars">Upload Property</li>
+                        <li class="list-group-item"><a href="/performance/">performances</a></li>
+                        <li class="list-group-item"><a href="/myadverts">My Adverts</a></li>
+                        <li class="list-group-item"><a href="/mymessage/">Massages</a></li>
+                        <li class="list-group-item"><a href="/orders">Orders</a></li>
+                        <li class="list-group-item"><a href="/settings/">Settings</a></li>
+                        <li class="list-group-item"><a href="/logout/">Log Out</a></li>
+                    </ul>
+                </div>
+                <div class="pt-5 bg-light content">
+                    <div class="row">
+                        <div class="col-md-8 mx-auto">
+                            <form action="" method="post" enctype="multipart/form-data" class="form-group">
+                                {{ form.csrf_token }}
+                                <h2 class="text-center text-danger">Upload Properties images</h2>
+                
+ <div class="input-group input-group-lg">
+    {{form.pname.label(class="form-control-label")}}
+    {{ form.pname(class="form-control") }}
+</div>
+
+<div class="form-group mt-3">
+    {{form.pdesc.label(class="form-control-label")}}
+    {{ form.pdesc(class="form-control") }}
+</div>
+
+<div class="input-group input-group-lg mt-3">
+    {{ form.amt.label(class="form-control-label") }}
+    <div class="input-group-prepend">
+        <span class="input-group-text">₦</span>
+    </div>
+    {{ form.amt(class="form-control") }}
+</div>
+
+<div class="form-group mt-3">
+    {{form.paddress.label(class="form-control-label")}}
+    {{ form.paddress(class="form-control") }}
+</div>
+                
+<div class="d-flex py-4" style=" gap: 10px;">
+    <div class="input-group d-flex"> 
+        {{ form.state.label(class="form-select rounded-right form-control px-4") }}
+        <!-- {{ form.state(class="form-select rounded-right form-control") }} -->
+
+        <select name="state" id="state" class="form-control">
+            <option value="">Select State</option>
+            {% for state in states %}
+            <option value="{{ state.state_id }}">{{ state.state_name }}</option>
+            {% endfor %}
+          </select>
+    </div>
+                    
+    <div class="input-group d-flex"> 
+        {{ form.lga.label(class="form-select rounded-right form-control px-4") }}
+        <!-- {{ form.lga(class="form-select rounded-right form-control") }} -->
+        <select name="lga" id="lga" class="form-control">
+            <option value="">Select LGA</option>
+          </select>
+    </div>
+</div>
+<div class="d-flex py-4" style=" gap: 10px;">
+    <div class="input-group d-flex">
+        {{ form.type.label(class="form-select rounded-right form-control px-4") }}
+        {{ form.type(class="form-select rounded-right form-control") }}
+    </div>
+    <div class="input-group d-flex">
+        {{ form.cat.label(class="form-select rounded-right form-control px-4") }}
+        {{ form.cat(class="form-select rounded-right form-control") }}
+    </div>
+
+</div>
+                
+<!-- <div class="d-flex mb-3 input-group-text">
+    {{ form.images.label(class="form-control py-1 px-0", multiple="multiple", id="image-upload") }}
+    {{ form.images(class="form-control py-1 px-0", multiple="multiple") }}
+
+</div> -->
+<div class="d-flex">
+    <div class="form-group">
+        {{ form.images.label(class="form-control-label") }}
+        {{ form.images(class="form-control-file", multiple="multiple", id="image-upload") }}
+        <small class="form-text text-muted">Maximum 7 images allowed</small>
+    </div>
+    
+    <div id="selected-images"></div>
+</div>
+
+<div class="mb-3 mt-3 form-group">
+{{ form.submit(class="btn btn-success") }}
+</div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                
+    </div>     
+    
+    <script src="{{url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
+<script src="{{url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+    <script>
+    
+    
+        $('#state').change(function(){
+          var state_id = $(this).val()
+          var csrf = '{{ csrf_token() }}'
+          $.ajax({
+            url: '/state/lgas/',
+            type: 'POST',
+            data: {"state_id":state_id, "csrf_token":csrf},
+            beforeSend: function(){
+              $('#lga').html('')
+            },
+            success: function(resp){
+              $('#lga').append("<option value=''>select LGA</option>")
+              for (let index = 0; index < resp.length; index++){
+                $('#lga').append(`<option value='${resp[index].lga_id}'>${resp[index].lga_name}</option>`);
+              }
+            }
+          })
+        })
+    
+
+
+
+
+        document.getElementById('image-upload').addEventListener('change', function () {
+        var files = this.files;
+        var filenames = '';
+        for (var i = 0; i < files.length; i++) {
+            filenames += '<p>' + files[i].name + '</p>';
+        }
+        // Append new filenames instead of overwriting
+        document.getElementById('selected-images').innerHTML += filenames;
+    });
+    </script>
+                                       
+        {% endblock content %}

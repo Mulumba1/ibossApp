@@ -1,0 +1,91 @@
+{% extends "user/base.html" %}
+
+{% block content %}
+<br><br><br>
+
+<div class="mx-auto pt-5 bg-light container">
+    <div class=" row justify-content-end">
+        <div class="col-lg-8">
+            <h1 class="text-center pt-5" id="greeting">{{ user.user_fname }} {{ user.user_lname }} {{ user.user_othername }}</h1>
+            <h4 class="text-center">REF No: <strong>{{ user.user_ref }}</strong></h4>
+            <button class="btn bg-danger"><a href="/exit/" class="text-white">Close</a></button>
+        </div>
+
+        <div class="col-md-4">
+            {% if not user.user_pics %}
+            <img src="/static/profile.jpeg" alt="..." style="max-height: 200px; max-width: 200px;" class="rounded-circle">
+            {% else %}
+            <img src="/static/profile/{{ user.user_pics }}" alt="..." style="max-height: 200px; max-width: 200px;" class="rounded-circle">
+            {% endif %}
+        </div>
+        <!-- <div class="col-md-4">
+        
+            <img src="/static/profile/{{ user.user_pics }}" alt="..." style="max-height: 200px; max-width: 200px;" class="rounded-circle">
+                
+        </div> -->
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>Name</th>
+                        <th>{{ user.user_fname }} {{ user.user_lname }} {{ user.user_othername }}</th>
+                       
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <th>{{ user.user_email }}</th>
+                    </tr>
+                    <tr>
+                        <th>Phone</th>
+                        <th>{{ user.user_phone }}</th>
+                    </tr>
+                    <tr>
+                        <th>NIN</th>
+                        <th>{{ user.user_nin }}</th>
+                    </tr>
+                   
+                   
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <table class="table">
+                <tbody>
+                
+                    <tr>
+                        <th>State</th>
+                        <th>{{user.userstate.state_name}}</th> 
+                    </tr>
+
+                    <tr>
+                        <th>LGA</th>
+                        <th>{{user.userlga.lga_name}}</th> 
+                        
+                    </tr>
+                    <tr>
+                        <th>Address</th>
+                        <th>{{ user.user_address }}</th>
+                    </tr>
+                    
+                    <tr>
+                        <th>Date Registered</th>
+                        <th>{{user.user_datereg}}</th>
+                       
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+   
+    
+
+    
+    
+
+
+</div>
+
+{% endblock %}
